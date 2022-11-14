@@ -124,3 +124,5 @@ modules:
     config-opts:
       - -DTW_BUILD_ID=flatpak
       - -DTeXworks_DIC_DIR=/app/share/hunspell
+    post-install:
+      - desktop-file-edit --set-key=Exec --set-value="texworks.sh %F" /app/share/applications/texworks.desktop
