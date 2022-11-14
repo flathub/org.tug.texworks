@@ -2,7 +2,7 @@ app-id: org.tug.texworks
 runtime: org.kde.Platform
 runtime-version: '5.15-21.08'
 sdk: org.kde.Sdk
-command: texworks
+command: texworks.sh
 rename-desktop-file: texworks.desktop
 rename-appdata-file: texworks.appdata.xml
 rename-icon: TeXworks
@@ -14,7 +14,6 @@ finish-args:
   - --filesystem=host
   - --env=TEXMFCACHE=$XDG_CACHE_HOME
   - --env=SESSION_MANAGER= # required to avoid Qt warning
-  - --env=PATH=/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin # required to find texlive binaries
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: '21.08'
