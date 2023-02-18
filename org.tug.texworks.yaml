@@ -1,6 +1,6 @@
 app-id: org.tug.texworks
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+runtime-version: 5.15-21.08
 sdk: org.kde.Sdk
 command: texworks
 rename-desktop-file: texworks.desktop
@@ -23,12 +23,11 @@ add-extensions:
 
 modules:
   - shared-modules/lua5.4/lua-5.4.json # required for TeXworks's lua scripting plugin
-  
   - name: boost # Build requirement of poppler
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2
-        sha256: 8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.81.0/source/boost_1_81_0.tar.bz2
+        sha256: 71feeed900fbccca04a3b4f2f84a7c217186f28a940ed8b7ed4725986baf99fa
         x-checker-data:
           type: anitya
           project-id: 6845
@@ -42,8 +41,8 @@ modules:
   - name: poppler # PDF rendering library used by TeXworks
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-22.02.0.tar.xz
-        sha256: e390c8b806f6c9f0e35c8462033e0a738bb2460ebd660bdb8b6dca01556193e1
+        url: https://poppler.freedesktop.org/poppler-23.02.0.tar.xz
+        sha256: 3315dda270fe2b35cf1f41d275948c39652fa863b90de0766f6b293d9a558fc9
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -63,8 +62,8 @@ modules:
   - name: poppler-data # Encoding data for CJK documents
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-data-0.4.11.tar.gz
-        sha256: 2cec05cd1bb03af98a8b06a1e22f6e6e1a65b1e2f3816cb3069bb0874825f08c
+        url: https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz
+        sha256: c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74
         x-checker-data:
           type: anitya
           project-id: 3687
@@ -79,8 +78,8 @@ modules:
   - name: hunspell # Spell checking library used by TeXworks
     sources:
       - type: archive
-        url: https://github.com/hunspell/hunspell/archive/v1.7.0.tar.gz
-        sha256: bb27b86eb910a8285407cf3ca33b62643a02798cf2eef468c0a74f6c3ee6bc8a
+        url: https://github.com/hunspell/hunspell/archive/v1.7.2.tar.gz
+        sha256: 69fa312d3586c988789266eaf7ffc9861d9f6396c31fc930a014d551b59bbd6e
         x-checker-data:
           type: anitya
           project-id: 1343
@@ -108,15 +107,11 @@ modules:
     buildsystem: simple
     build-commands:
       # Only install languages the TeXworks UI has been translated to
-      - for LANG in af ar ca cs de en es fr it nl pl pt ru sl tr; do
-          for DIC in $(find . -iname "${LANG}*.dic"); do
-            AFF="$(dirname "${DIC}")/$(basename "${DIC}" ".dic").aff";
-            if [ ! -f "${AFF}" ]; then continue; fi;
-            echo "Installing $(basename ${DIC} .dic)";
-            install -D -t /app/share/hunspell "${DIC}";
-            install -D -t /app/share/hunspell "${AFF}";
-          done;
-        done
+      - for LANG in af ar ca cs de en es fr it nl pl pt ru sl tr; do for DIC in $(find
+        . -iname "${LANG}*.dic"); do AFF="$(dirname "${DIC}")/$(basename "${DIC}"
+        ".dic").aff"; if [ ! -f "${AFF}" ]; then continue; fi; echo "Installing $(basename
+        ${DIC} .dic)"; install -D -t /app/share/hunspell "${DIC}"; install -D -t /app/share/hunspell
+        "${AFF}"; done; done
 
   - name: texlive-mountpoint # Mount point for org.freedesktop.Sdk.Extension.texlive
     buildsystem: simple
