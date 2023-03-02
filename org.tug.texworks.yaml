@@ -42,8 +42,8 @@ modules:
   - name: poppler # PDF rendering library used by TeXworks
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-23.02.0.tar.xz
-        sha256: 3315dda270fe2b35cf1f41d275948c39652fa863b90de0766f6b293d9a558fc9
+        url: https://poppler.freedesktop.org/poppler-23.03.0.tar.xz
+        sha256: b04148bf849c1965ada7eff6be4685130e3a18a84e0cce73bf9bc472ec32f2b4
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -108,15 +108,11 @@ modules:
     buildsystem: simple
     build-commands:
       # Only install languages the TeXworks UI has been translated to
-      - for LANG in af ar ca cs de en es fr it nl pl pt ru sl tr; do
-          for DIC in $(find . -iname "${LANG}*.dic"); do
-            AFF="$(dirname "${DIC}")/$(basename "${DIC}" ".dic").aff";
-            if [ ! -f "${AFF}" ]; then continue; fi;
-            echo "Installing $(basename ${DIC} .dic)";
-            install -D -t /app/share/hunspell "${DIC}";
-            install -D -t /app/share/hunspell "${AFF}";
-          done;
-        done
+      - for LANG in af ar ca cs de en es fr it nl pl pt ru sl tr; do for DIC in $(find
+        . -iname "${LANG}*.dic"); do AFF="$(dirname "${DIC}")/$(basename "${DIC}"
+        ".dic").aff"; if [ ! -f "${AFF}" ]; then continue; fi; echo "Installing $(basename
+        ${DIC} .dic)"; install -D -t /app/share/hunspell "${DIC}"; install -D -t /app/share/hunspell
+        "${AFF}"; done; done
 
   - name: texlive-mountpoint # Mount point for org.freedesktop.Sdk.Extension.texlive
     buildsystem: simple
