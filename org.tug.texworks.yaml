@@ -27,8 +27,8 @@ modules:
   - name: boost # Build requirement of poppler
     sources:
       - type: archive
-        url: https://github.com/boostorg/boost/releases/download/boost-1.81.0/boost-1.81.0.tar.xz
-        sha256: 06bc525a392650eb6248f40a13f40112b6c485eec7103b6dcde7196f2a3570e0
+        url: https://github.com/boostorg/boost/releases/download/boost-1.83.0/boost-1.83.0.tar.xz
+        sha256: c5a0688e1f0c05f354bbd0b32244d36085d9ffc9f932e8a18983a9908096f614
         x-checker-data:
           type: anitya
           project-id: 6845
@@ -42,8 +42,8 @@ modules:
   - name: poppler # PDF rendering library used by TeXworks
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-23.02.0.tar.xz
-        sha256: 3315dda270fe2b35cf1f41d275948c39652fa863b90de0766f6b293d9a558fc9
+        url: https://poppler.freedesktop.org/poppler-23.08.0.tar.xz
+        sha256: 4a4bf7fc903b9f1a2ab7d04b7c5d8220db9bc6261cc73fdb9a826dc272f49aa8
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -108,15 +108,11 @@ modules:
     buildsystem: simple
     build-commands:
       # Only install languages the TeXworks UI has been translated to
-      - for LANG in af ar ca cs de en es fr it nl pl pt ru sl tr; do
-          for DIC in $(find . -iname "${LANG}*.dic"); do
-            AFF="$(dirname "${DIC}")/$(basename "${DIC}" ".dic").aff";
-            if [ ! -f "${AFF}" ]; then continue; fi;
-            echo "Installing $(basename ${DIC} .dic)";
-            install -D -t /app/share/hunspell "${DIC}";
-            install -D -t /app/share/hunspell "${AFF}";
-          done;
-        done
+      - for LANG in af ar ca cs de en es fr it nl pl pt ru sl tr; do for DIC in $(find
+        . -iname "${LANG}*.dic"); do AFF="$(dirname "${DIC}")/$(basename "${DIC}"
+        ".dic").aff"; if [ ! -f "${AFF}" ]; then continue; fi; echo "Installing $(basename
+        ${DIC} .dic)"; install -D -t /app/share/hunspell "${DIC}"; install -D -t /app/share/hunspell
+        "${AFF}"; done; done
 
   - name: texlive-mountpoint # Mount point for org.freedesktop.Sdk.Extension.texlive
     buildsystem: simple
