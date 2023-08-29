@@ -11,7 +11,12 @@ finish-args:
   - --socket=x11
   - --share=ipc
   - --device=dri
-  - --filesystem=host
+  - --filesystem=home
+  - --filesystem=/media
+  - --filesystem=/mnt
+  - --filesystem=/run/media
+  - --filesystem=/var/run/media
+  - --filesystem=/var/mnt
   - --env=TEXMFCACHE=$XDG_CACHE_HOME
   - --env=SESSION_MANAGER= # required to avoid Qt warning
   - --env=PATH=/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin # required to find texlive binaries
