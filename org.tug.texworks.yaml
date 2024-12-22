@@ -1,6 +1,6 @@
 app-id: org.tug.texworks
 runtime: org.kde.Platform
-runtime-version: '6.6'
+runtime-version: '6.8'
 sdk: org.kde.Sdk
 command: texworks
 rename-desktop-file: texworks.desktop
@@ -29,13 +29,13 @@ modules:
   - name: boost # Build requirement of poppler
     sources:
       - type: archive
-        url: https://github.com/boostorg/boost/releases/download/boost-1.84.0/boost-1.84.0.tar.xz
-        sha256: 2e64e5d79a738d0fa6fb546c6e5c2bd28f88d268a2a080546f74e5ff98f29d0e
+        url: https://github.com/boostorg/boost/releases/download/boost-1.87.0/boost-1.87.0-b2-nodocs.tar.xz
+        sha256: 3abd7a51118a5dd74673b25e0a3f0a4ab1752d8d618f4b8cea84a603aeecc680
         x-checker-data:
           type: anitya
           project-id: 6845
           stable-only: true
-          url-template: https://github.com/boostorg/boost/releases/download/boost-$version/boost-$version.tar.xz
+          url-template: https://github.com/boostorg/boost/releases/download/boost-$version/boost-$version-b2-nodocs.tar.xz
     buildsystem: simple
     build-commands:
       - ./bootstrap.sh --prefix=/app --with-libraries=system
@@ -44,8 +44,8 @@ modules:
   - name: poppler # PDF rendering library used by TeXworks
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-24.03.0.tar.xz
-        sha256: bafbf0db5713dec25b5d16eb2cd87e4a62351cdc40f050c3937cd8dd6882d446
+        url: https://poppler.freedesktop.org/poppler-24.12.0.tar.xz
+        sha256: 1cf374c3146f3f685d9257701bf0c2866c61d6c202c14d1f5c01a1f3a089028a
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -109,8 +109,8 @@ modules:
   - name: libreoffice-dictionaries # Spell checking dictionaries
     sources:
       - type: archive
-        url: https://github.com/LibreOffice/dictionaries/archive/refs/tags/libreoffice-24.2.1.1.tar.gz
-        sha256: a6d2ef09dab7e8db34342a4dce735db257493c5980e10b21fab2f66b86e453ee
+        url: https://github.com/LibreOffice/dictionaries/archive/refs/tags/libreoffice-25.2.0.1.tar.gz
+        sha256: 91154601090a160a692c317129a663a16e1a67e3afe78ea8887c1a9940274e23
     buildsystem: simple
     build-commands:
       # Only install languages the TeXworks UI has been translated to
