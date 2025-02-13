@@ -1,9 +1,9 @@
-diff --git a/res/texworks.appdata.xml b/res/texworks.appdata.xml
-index 0b190abe..99ab2dda 100644
---- a/res/texworks.appdata.xml
-+++ b/res/texworks.appdata.xml
+diff --git a/res/org.tug.texworks.metainfo.xml b/res/org.tug.texworks.metainfo.xml
+index 2128cf15..bc884dea 100644
+--- a/res/org.tug.texworks.metainfo.xml
++++ b/res/org.tug.texworks.metainfo.xml
 @@ -4,6 +4,7 @@
- 	<id>org.tug.texworks.desktop</id>
+ 	<id>org.tug.texworks</id>
  	<metadata_license>CC0-1.0</metadata_license>
  	<project_license>GPL-2.0+</project_license>
 +	<developer_name>The TeXworks community</developer_name>
