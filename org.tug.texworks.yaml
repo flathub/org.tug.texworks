@@ -3,8 +3,6 @@ runtime: org.kde.Platform
 runtime-version: '6.8'
 sdk: org.kde.Sdk
 command: texworks
-rename-desktop-file: texworks.desktop
-rename-appdata-file: texworks.appdata.xml
 rename-icon: TeXworks
 finish-args:
 #  - --socket=wayland
@@ -139,8 +137,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/TeXworks/texworks.git
-        tag: release-0.6.9
-        commit: 68a2e99cffbbf38f2e210d67d9a522acf77fdf6b
+        tag: release-0.6.10
+        commit: 738094101ff065072612d7404a2c1c9dd33f90c4
       - type: patch
         path: appdata.patch
     buildsystem: cmake-ninja
