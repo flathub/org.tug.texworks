@@ -1,15 +1,25 @@
 diff --git a/res/org.tug.texworks.metainfo.xml b/res/org.tug.texworks.metainfo.xml
-index 2128cf15..bc884dea 100644
+index 2128cf15..eee14af3 100644
 --- a/res/org.tug.texworks.metainfo.xml
 +++ b/res/org.tug.texworks.metainfo.xml
-@@ -4,6 +4,7 @@
+@@ -4,14 +4,15 @@
  	<id>org.tug.texworks</id>
  	<metadata_license>CC0-1.0</metadata_license>
  	<project_license>GPL-2.0+</project_license>
 +	<developer_name>The TeXworks community</developer_name>
  	<name>TeXworks</name>
  	<name xml:lang="de">TeXworks</name>
- 	<summary>A simple environment for editing, typesetting, and previewing TeX documents</summary>
+-	<summary>A simple environment for editing, typesetting, and previewing TeX documents</summary>
++	<summary>Editing TeX documents made simple</summary>
+ 	<summary xml:lang="af">'n Eenvoudige omgewing vir redigering, letterset, en vooraflees van TeX dokumente</summary>
+ 	<summary xml:lang="ar">بيئة بسيطة لتحرير وصف ومعاينة مستندات تخ</summary>
+ 	<summary xml:lang="ca">Un entorn senzill per a l'edició, composiciò i vista prèvia de documents TeX</summary>
+ 	<summary xml:lang="cs">Jednoduché prostředí pro úpravu, sazbu a náhled TeXových dokumentů</summary>
+-	<summary xml:lang="de">Eine einfache Umgebung zum Bearbeiten, Setzen und Darstellen von TeX-Dokumenten</summary>
++	<summary xml:lang="de">TeX-Dokumente editieren leicht gemacht</summary>
+ 	<summary xml:lang="es">Un entorno sencillo para editar, compilar y previsualizar documentos TeX</summary>
+ 	<summary xml:lang="fa">محیطی ساده برای ویرایش، حروف‌چینی، و پیش‌نمایش مستندات تک</summary>
+ 	<summary xml:lang="fo">Eitt einfalt umhvørvi til at skriva, seta og lesa TeX-skjøl við</summary>
 @@ -45,6 +46,11 @@
  			Among other things, TeXworks features an integrated PDF previewer, synchronization
  			between the TeX files and the PDF output, and an extensible scripting interface.
@@ -22,3 +32,15 @@ index 2128cf15..bc884dea 100644
  		<p xml:lang="af">
  			TeXworks is 'n omgewing vir die skep van TeX (LaTeX, ConTeXt, ens.) dokumente, met 'n
  			Unicode-gebaseerde, TeX-bewuste redigeerder, geïntegreerde PDF besigtiger, en 'n skoon,
+@@ -312,6 +318,11 @@
+ 			<caption>The TeXworks source and preview windows</caption>
+ 		</screenshot>
+ 	</screenshots>
++	<branding>
++		<color type="primary" scheme_preference="light">#0066cc</color>
++		<color type="primary" scheme_preference="dark">#0066cc</color>
++	</branding>
++
+ 	<url type="homepage">https://www.tug.org/texworks/</url>
+ 	<url type="help">https://github.com/TeXworks/manual</url>
+ 	<url type="bugtracker">https://github.com/TeXworks/texworks/issues</url>
