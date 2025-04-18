@@ -94,7 +94,7 @@ modules:
     build-commands:
       - autoreconf -vfi
       - ./configure --prefix=/app
-      - make -j
+      - make -j $FLATPAK_BUILDER_N_JOBS
       - make install
     cleanup:
       - /bin
