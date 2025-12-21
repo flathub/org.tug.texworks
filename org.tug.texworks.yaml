@@ -6,6 +6,7 @@ command: texworks
 rename-icon: TeXworks
 finish-args:
   - --socket=wayland
+  - --socket=fallback-x11
 #  - --socket=x11
   - --share=ipc
   - --device=dri
