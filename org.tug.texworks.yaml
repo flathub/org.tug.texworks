@@ -21,6 +21,14 @@ add-extensions:
     version: '23.08'
     directory: texlive # this is relative to /app
     no-autodownload: true
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+  - /share/doc
+  - /share/man
+  - '*.la'
+  - '*.a'
 
 modules:
   - shared-modules/lua5.4/lua-5.4.json # required for TeXworks's lua scripting plugin
@@ -59,11 +67,6 @@ modules:
       - -DENABLE_QT5=OFF
     cleanup:
       - /bin
-      - /include
-      - /lib/pkgconfig
-      - /lib/*.a
-      - /lib/*.la
-      - /share/man
 
   - name: poppler-data # Encoding data for CJK documents
     sources:
@@ -99,11 +102,6 @@ modules:
       - make install
     cleanup:
       - /bin
-      - /include
-      - /lib/pkgconfig
-      - /lib/*.a
-      - /lib/*.la
-      - /share/man
 
   - name: libreoffice-dictionaries # Spell checking dictionaries
     sources:
