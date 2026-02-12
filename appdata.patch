@@ -25,9 +25,9 @@ index 2128cf15..eee14af3 100644
  			between the TeX files and the PDF output, and an extensible scripting interface.
  		</p>
 +		<p>
-+			To use the tex distribution provided by flathub, install it via
++			To use the TeX distribution provided by flathub, install it via
 +
-+			flatpak install org.freedesktop.Sdk.Extension.texlive//23.08
++			flatpak install org.freedesktop.Sdk.Extension.texlive//25.08
 +		</p>
  		<p xml:lang="af">
  			TeXworks is 'n omgewing vir die skep van TeX (LaTeX, ConTeXt, ens.) dokumente, met 'n
@@ -41,6 +41,6 @@ index 2128cf15..eee14af3 100644
 +		<color type="primary" scheme_preference="dark">#0066cc</color>
 +	</branding>
 +
- 	<url type="homepage">https://www.tug.org/texworks/</url>
+ 	<url type="homepage">https://tug.org/texworks/</url>
  	<url type="help">https://github.com/TeXworks/manual</url>
  	<url type="bugtracker">https://github.com/TeXworks/texworks/issues</url>
