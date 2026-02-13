@@ -108,8 +108,8 @@ modules:
   - name: libreoffice-dictionaries # Spell checking dictionaries
     sources:
       - type: archive
-        url: https://github.com/LibreOffice/dictionaries/archive/refs/tags/libreoffice-26.2.0.1.tar.gz
-        sha256: f2368e3ee7e244ee023dd034fde3fac3482c8281d6a17c2c46baf0d392f1aa4b
+        url: https://github.com/LibreOffice/dictionaries/archive/refs/tags/libreoffice-26.2.1.1.tar.gz
+        sha256: b840b9cd881141496090f1d728b966ff3fa4e6a2c186f2100b5a0394a6a67c7a
     buildsystem: simple
     build-commands:
       # Only install languages the TeXworks UI has been translated to
@@ -138,8 +138,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/TeXworks/texworks.git
-        tag: release-0.6.10
-        commit: 738094101ff065072612d7404a2c1c9dd33f90c4
+        tag: release-0.6.11
+        commit: 7951fd8b942b083d937f8d6019826eca94461dc5
       - type: patch
         path: appdata.patch
     buildsystem: cmake-ninja
