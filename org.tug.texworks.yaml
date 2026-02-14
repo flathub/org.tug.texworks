@@ -18,7 +18,7 @@ finish-args:
   - --env=PERL5LIB=/app/texlive/lib/perl5/5.38.0:/app/texlive/lib/perl5/site_perl/5.38.0
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: '23.08'
+    version: '25.08'
     directory: texlive # this is relative to /app
     no-autodownload: true
 cleanup:
