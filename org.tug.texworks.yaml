@@ -35,8 +35,8 @@ modules:
   - name: boost # Build requirement of poppler
     sources:
       - type: archive
-        url: https://github.com/boostorg/boost/releases/download/boost-1.90.0/boost-1.90.0-b2-nodocs.tar.xz
-        sha256: 9e6bee9ab529fb2b0733049692d57d10a72202af085e553539a05b4204211a6f
+        url: https://github.com/boostorg/boost/releases/download/boost-1.91.0-1/boost-1.91.0-1-b2-nodocs.tar.xz
+        sha256: 7334bb672b9c7aa135da88bcc3111a64a198be9a7d44eb5151d9248e7cfd43ef
         x-checker-data:
           type: anitya
           project-id: 6845
@@ -50,8 +50,8 @@ modules:
   - name: poppler # PDF rendering library used by TeXworks
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-26.02.0.tar.xz
-        sha256: dded8621f7b2f695c91063aab1558691c8418374cd583501e89ed39487e7ab77
+        url: https://poppler.freedesktop.org/poppler-26.04.0.tar.xz
+        sha256: b0955163114af96bc0106f68cb24daf973a629462453d8b82775f81b0d4e0693
         x-checker-data:
           type: anitya
           project-id: 3686
