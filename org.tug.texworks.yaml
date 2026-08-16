@@ -1,6 +1,6 @@
 app-id: org.tug.texworks
 runtime: org.kde.Platform
-runtime-version: '6.10'
+runtime-version: '6.11'
 sdk: org.kde.Sdk
 command: texworks
 rename-icon: TeXworks
@@ -35,8 +35,8 @@ modules:
   - name: boost # Build requirement of poppler
     sources:
       - type: archive
-        url: https://github.com/boostorg/boost/releases/download/boost-1.90.0/boost-1.90.0-b2-nodocs.tar.xz
-        sha256: 9e6bee9ab529fb2b0733049692d57d10a72202af085e553539a05b4204211a6f
+        url: https://github.com/boostorg/boost/releases/download/boost-1.92.0/boost-1.92.0-b2-nodocs.tar.xz
+        sha256: ea7b982002cc9dfbe59b0b217b206f470dc75f3de0bb2973d844118934d82411
         x-checker-data:
           type: anitya
           project-id: 6845
@@ -50,8 +50,8 @@ modules:
   - name: poppler # PDF rendering library used by TeXworks
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-26.02.0.tar.xz
-        sha256: dded8621f7b2f695c91063aab1558691c8418374cd583501e89ed39487e7ab77
+        url: https://poppler.freedesktop.org/poppler-26.08.0.tar.xz
+        sha256: dc906e68cea698109706ac6aa3d2c9d4512fcfcac42d90b8afcda486d1b9abd0
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -86,8 +86,8 @@ modules:
   - name: hunspell # Spell checking library used by TeXworks
     sources:
       - type: archive
-        url: https://github.com/hunspell/hunspell/archive/v1.7.2.tar.gz
-        sha256: 69fa312d3586c988789266eaf7ffc9861d9f6396c31fc930a014d551b59bbd6e
+        url: https://github.com/hunspell/hunspell/archive/v1.7.3.tar.gz
+        sha256: 933be3dac6fd55f6e752331a170efb7e33800e40fae1156d8434cc8c85379a1b
         x-checker-data:
           type: anitya
           project-id: 1343
@@ -105,8 +105,8 @@ modules:
   - name: libreoffice-dictionaries # Spell checking dictionaries
     sources:
       - type: archive
-        url: https://github.com/LibreOffice/dictionaries/archive/refs/tags/libreoffice-26.2.1.1.tar.gz
-        sha256: b840b9cd881141496090f1d728b966ff3fa4e6a2c186f2100b5a0394a6a67c7a
+        url: https://github.com/LibreOffice/dictionaries/archive/refs/tags/libreoffice-26.8.0.2.tar.gz
+        sha256: e10e2f30c52ef57e3b1ee573c18f2327d2c670a7efcb540a9289591468f559bb
     buildsystem: simple
     build-commands:
       # Only install languages the TeXworks UI has been translated to
