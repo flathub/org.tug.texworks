@@ -35,13 +35,15 @@ modules:
   - name: boost # Build requirement of poppler
     sources:
       - type: archive
-        url: https://github.com/boostorg/boost/releases/download/boost-1.92.0/boost-1.92.0-b2-nodocs.tar.xz
+        url: 
+          https://github.com/boostorg/boost/releases/download/boost-1.92.0/boost-1.92.0-b2-nodocs.tar.xz
         sha256: ea7b982002cc9dfbe59b0b217b206f470dc75f3de0bb2973d844118934d82411
         x-checker-data:
           type: anitya
           project-id: 6845
           stable-only: true
-          url-template: https://github.com/boostorg/boost/releases/download/boost-$version/boost-$version-b2-nodocs.tar.xz
+          url-template: 
+            https://github.com/boostorg/boost/releases/download/boost-$version/boost-$version-b2-nodocs.tar.xz
     buildsystem: simple
     build-commands:
       - ./bootstrap.sh --prefix=/app --with-libraries=system
@@ -86,8 +88,8 @@ modules:
   - name: hunspell # Spell checking library used by TeXworks
     sources:
       - type: archive
-        url: https://github.com/hunspell/hunspell/archive/v1.7.5.tar.gz
-        sha256: 833ee0cb129f7b933def265ea907f9ba4d0cfc5b52d838678eafceeec1adaa53
+        url: https://github.com/hunspell/hunspell/archive/v1.7.6.tar.gz
+        sha256: 4fa9c52a5337fb0a3e03f3212b6372d0159eac3d1a3e6e938e8897ff3d9c3d0c
         x-checker-data:
           type: anitya
           project-id: 1343
@@ -105,7 +107,8 @@ modules:
   - name: libreoffice-dictionaries # Spell checking dictionaries
     sources:
       - type: archive
-        url: https://github.com/LibreOffice/dictionaries/archive/refs/tags/libreoffice-26.8.0.2.tar.gz
+        url: 
+          https://github.com/LibreOffice/dictionaries/archive/refs/tags/libreoffice-26.8.0.2.tar.gz
         sha256: e10e2f30c52ef57e3b1ee573c18f2327d2c670a7efcb540a9289591468f559bb
     buildsystem: simple
     build-commands:
@@ -124,7 +127,8 @@ modules:
   - name: manual # The TeXworks manual
     sources:
       - type: archive
-        url: https://github.com/TeXworks/manual/releases/download/2024-02-09/TeXworks-manual-html-20240209214359-496ef4a.zip
+        url: 
+          https://github.com/TeXworks/manual/releases/download/2024-02-09/TeXworks-manual-html-20240209214359-496ef4a.zip
         sha256: 4eb722d214068b38972d1da176db4496d27ca1ca8dd995619d5833cae4b83e9e
     buildsystem: simple
     build-commands:
